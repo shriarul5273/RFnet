@@ -5,7 +5,7 @@ import torch.nn as nn
 import numpy as np
 import os, argparse
 import cv2
-from Code.lib.model_RAFNet import RAFNet
+from Code.lib.model_RFNet import RFNet
 from Code.utils.data import test_dataset
 from Code.utils.options import opt
 
@@ -19,7 +19,7 @@ print('USE GPU {}'.format(opt.gpu_id))
  
 
 #load the model
-model = RAFNet(32,50)
+model = RFNet(32,50)
 model.cuda()
 
 model.load_state_dict(torch.load('./Checkpoint/RAFNet/RAFNet_epoch_best.pth'))
